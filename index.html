@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Happy Birthday Hon 🌿</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <audio id="bgMusic" src="song_mp3.mp3" loop preload="auto"></audio>
+  <button class="music-toggle" id="musicToggle" title="Mute/unmute music">🔊</button>
+
+  <div class="page" id="page-welcome">
+    <div class="welcome-title">A little gift for you, Hon 🌿</div>
+    <div class="welcome-sub">Please Click The Enter Button</div>
+    <button class="enter-btn" id="enterBtn">Enter</button>
+  </div>
+
+  <div class="page" id="page-plant">
+
+    <div class="plant-title">Watch it grow, just like us 🌱</div>
+    <div class="petal-hint" id="petalHint">🌸 Please click each petal 🌸</div>
+
+    <div class="plant-stage">
+      <div class="ground"></div>
+
+      <svg id="plant-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+
+        <path id="stem" d="M150,380 C150,380 150,380 150,380"
+              stroke="#2f5c3f" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+        <g id="leaf1" class="leaf" opacity="0">
+          <path d="M150,330 C110,320 70,290 60,240 C110,250 145,280 150,330 Z" fill="#3a6b45"/>
+          <path d="M150,330 C130,300 110,270 90,255" stroke="#1f3d2b" stroke-width="2" fill="none"/>
+        </g>
+        <g id="leaf2" class="leaf" opacity="0">
+          <path d="M150,300 C190,288 225,258 235,210 C188,222 155,250 150,300 Z" fill="#4a7c52"/>
+          <path d="M150,300 C168,272 188,244 208,230" stroke="#1f3d2b" stroke-width="2" fill="none"/>
+        </g>
+        <g id="leaf3" class="leaf" opacity="0">
+          <path d="M150,250 C112,236 80,204 72,158 C118,168 148,198 150,250 Z" fill="#3a6b45"/>
+          <path d="M150,250 C132,220 112,192 94,178" stroke="#1f3d2b" stroke-width="2" fill="none"/>
+        </g>
+        <g id="leaf4" class="leaf" opacity="0">
+          <path d="M150,215 C186,202 216,174 224,132 C182,144 154,170 150,215 Z" fill="#4a7c52"/>
+          <path d="M150,215 C166,190 184,164 202,150" stroke="#1f3d2b" stroke-width="2" fill="none"/>
+        </g>
+
+        <defs>
+          <linearGradient id="lilyGradA" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#d9436b"/>
+            <stop offset="55%" stop-color="#ef7d95"/>
+            <stop offset="100%" stop-color="#fbe4e6"/>
+          </linearGradient>
+          <linearGradient id="lilyGradB" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#e2654a"/>
+            <stop offset="55%" stop-color="#f5a06a"/>
+            <stop offset="100%" stop-color="#fdf0e0"/>
+          </linearGradient>
+        </defs>
+
+        <g id="flowerCenter" opacity="0" transform="translate(150,92)">
+          <circle cx="0" cy="0" r="7" fill="#4a7c3f"/>
+        </g>
+
+        <g id="petals" opacity="0">
+          <g class="petal-slot" transform="rotate(0,150,92)">
+            <path class="petal" data-lang="en"
+                  d="M150,92 C136,68 133,32 150,10 C167,32 164,68 150,92 Z" fill="url(#lilyGradA)"/>
+          </g>
+          <g class="petal-slot" transform="rotate(60,150,92)">
+            <path class="petal" data-lang="tl"
+                  d="M150,92 C136,68 133,32 150,10 C167,32 164,68 150,92 Z" fill="url(#lilyGradB)"/>
+          </g>
+          <g class="petal-slot" transform="rotate(120,150,92)">
+            <path class="petal" data-lang="es"
+                  d="M150,92 C136,68 133,32 150,10 C167,32 164,68 150,92 Z" fill="url(#lilyGradA)"/>
+          </g>
+          <g class="petal-slot" transform="rotate(180,150,92)">
+            <path class="petal" data-lang="ja"
+                  d="M150,92 C136,68 133,32 150,10 C167,32 164,68 150,92 Z" fill="url(#lilyGradB)"/>
+          </g>
+          <g class="petal-slot" transform="rotate(240,150,92)">
+            <path class="petal" data-lang="fr"
+                  d="M150,92 C136,68 133,32 150,10 C167,32 164,68 150,92 Z" fill="url(#lilyGradA)"/>
+          </g>
+          <g class="petal-slot" transform="rotate(300,150,92)">
+            <path class="petal" data-lang="ko"
+                  d="M150,92 C136,68 133,32 150,10 C167,32 164,68 150,92 Z" fill="url(#lilyGradB)"/>
+          </g>
+        </g>
+
+        <g id="stamens" opacity="0" stroke="#7a3b2a" stroke-width="1.6">
+          <line x1="150" y1="92" x2="128" y2="60" transform="rotate(15,150,92)"/>
+          <line x1="150" y1="92" x2="128" y2="60" transform="rotate(90,150,92)"/>
+          <line x1="150" y1="92" x2="128" y2="60" transform="rotate(165,150,92)"/>
+          <line x1="150" y1="92" x2="128" y2="60" transform="rotate(240,150,92)"/>
+          <line x1="150" y1="92" x2="128" y2="60" transform="rotate(315,150,92)"/>
+          <ellipse cx="128" cy="60" rx="4" ry="2.4" fill="#7a3b2a" transform="rotate(15,150,92)"/>
+          <ellipse cx="128" cy="60" rx="4" ry="2.4" fill="#7a3b2a" transform="rotate(90,150,92)"/>
+          <ellipse cx="128" cy="60" rx="4" ry="2.4" fill="#7a3b2a" transform="rotate(165,150,92)"/>
+          <ellipse cx="128" cy="60" rx="4" ry="2.4" fill="#7a3b2a" transform="rotate(240,150,92)"/>
+          <ellipse cx="128" cy="60" rx="4" ry="2.4" fill="#7a3b2a" transform="rotate(315,150,92)"/>
+        </g>
+      </svg>
+
+      <div class="tulip-wrap" id="tulipWrap" title="Click me">
+        <div class="tulip-hint">
+          <div class="tulip-hint-text">Also Please Click Here</div>
+          <div class="tulip-hint-arrow">⬇</div>
+        </div>
+        <svg viewBox="0 0 100 140" class="tulip-svg">
+          <path d="M50,140 L50,70" stroke="#2f5c3f" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M50,70 C30,80 20,60 30,45" stroke="#3a6b45" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M50,72 C42,50 42,20 50,8 C58,20 58,50 50,72 Z" fill="#c0416f"/>
+          <path d="M50,72 C36,52 30,26 38,10 C44,24 48,50 50,72 Z" fill="#d9578a"/>
+          <path d="M50,72 C64,52 70,26 62,10 C56,24 52,50 50,72 Z" fill="#d9578a"/>
+        </svg>
+        <div class="tulip-glow"></div>
+      </div>
+
+      <div class="mini-flower mini-flower-left" id="daisyWrap">
+        <svg viewBox="0 0 80 110" class="mini-flower-svg">
+          <path d="M40,110 L40,55" stroke="#2f5c3f" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M40,80 C26,86 14,76 16,64" stroke="#3a6b45" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <g transform="translate(40,42)">
+            <ellipse rx="9" ry="16" transform="rotate(0)" fill="#fffdf6"/>
+            <ellipse rx="9" ry="16" transform="rotate(60)" fill="#fffdf6"/>
+            <ellipse rx="9" ry="16" transform="rotate(120)" fill="#fffdf6"/>
+            <ellipse rx="9" ry="16" transform="rotate(180)" fill="#fffdf6"/>
+            <ellipse rx="9" ry="16" transform="rotate(240)" fill="#fffdf6"/>
+            <ellipse rx="9" ry="16" transform="rotate(300)" fill="#fffdf6"/>
+            <circle r="7" fill="#e8b93f"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="mini-flower mini-flower-center" id="budWrap">
+        <svg viewBox="0 0 60 80" class="mini-flower-svg">
+          <path d="M30,80 L30,40" stroke="#2f5c3f" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <g transform="translate(30,26)">
+            <ellipse rx="6" ry="12" transform="rotate(0)" fill="#9b6bb5"/>
+            <ellipse rx="6" ry="12" transform="rotate(72)" fill="#ac7fc4"/>
+            <ellipse rx="6" ry="12" transform="rotate(144)" fill="#9b6bb5"/>
+            <ellipse rx="6" ry="12" transform="rotate(216)" fill="#ac7fc4"/>
+            <ellipse rx="6" ry="12" transform="rotate(288)" fill="#9b6bb5"/>
+            <circle r="5" fill="#fbe98f"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="mini-flower mini-flower-far-left" id="redFlowerWrap">
+        <svg viewBox="0 0 70 100" class="mini-flower-svg">
+          <path d="M35,100 L35,48" stroke="#2f5c3f" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M35,74 C22,80 12,70 14,58" stroke="#3a6b45" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <g transform="translate(35,34)">
+            <ellipse rx="8" ry="15" transform="rotate(0)" fill="#d9436b"/>
+            <ellipse rx="8" ry="15" transform="rotate(72)" fill="#e2657f"/>
+            <ellipse rx="8" ry="15" transform="rotate(144)" fill="#d9436b"/>
+            <ellipse rx="8" ry="15" transform="rotate(216)" fill="#e2657f"/>
+            <ellipse rx="8" ry="15" transform="rotate(288)" fill="#d9436b"/>
+            <circle r="6" fill="#fbe98f"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="mini-flower mini-flower-right" id="blueFlowerWrap">
+        <svg viewBox="0 0 70 100" class="mini-flower-svg">
+          <path d="M35,100 L35,50" stroke="#2f5c3f" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M35,76 C48,82 58,72 56,60" stroke="#3a6b45" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <g transform="translate(35,36)">
+            <ellipse rx="7" ry="14" transform="rotate(0)" fill="#5b8ac4"/>
+            <ellipse rx="7" ry="14" transform="rotate(72)" fill="#7ba3d6"/>
+            <ellipse rx="7" ry="14" transform="rotate(144)" fill="#5b8ac4"/>
+            <ellipse rx="7" ry="14" transform="rotate(216)" fill="#7ba3d6"/>
+            <ellipse rx="7" ry="14" transform="rotate(288)" fill="#5b8ac4"/>
+            <circle r="5.5" fill="#fdf6e3"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="mini-flower mini-flower-far-right" id="whiteFlowerWrap">
+        <svg viewBox="0 0 60 80" class="mini-flower-svg">
+          <path d="M30,80 L30,42" stroke="#2f5c3f" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <g transform="translate(30,28)">
+            <ellipse rx="6" ry="12" transform="rotate(0)" fill="#fffdf6"/>
+            <ellipse rx="6" ry="12" transform="rotate(72)" fill="#fffdf6"/>
+            <ellipse rx="6" ry="12" transform="rotate(144)" fill="#fffdf6"/>
+            <ellipse rx="6" ry="12" transform="rotate(216)" fill="#fffdf6"/>
+            <ellipse rx="6" ry="12" transform="rotate(288)" fill="#fffdf6"/>
+            <circle r="5" fill="#e8b93f"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="bottom-area">
+      <div class="birthday-hint" id="birthdayHint">
+        <div class="birthday-hint-text">Tap for a surprise</div>
+        <div class="birthday-hint-arrow">⬇</div>
+      </div>
+      <div class="birthday-msg" id="birthdayMsg">🎂 Happy Birthday Hon 🎂</div>
+    </div>
+  </div>
+
+  <canvas id="fallingPetalsCanvas" class="falling-petals-canvas"></canvas>
+
+  <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+  <div class="overlay" id="petalOverlay">
+    <div class="petal-card">
+      <button class="close-btn" id="closePetal">✕</button>
+      <img id="petalImage" src="" alt="memory">
+      <div class="petal-message" id="petalMessage"></div>
+    </div>
+  </div>
+
+  <div class="overlay" id="heartOverlay">
+    <div class="heart-stage" id="heartStage">
+
+      <div class="big-heart" id="bigHeart">💚</div>
+      <div class="love-message" id="loveMessage">I Love You For The Rest Of My Life</div>
+    </div>
+  </div>
+
+  <div class="overlay" id="proposalOverlay">
+    <div class="proposal-card" id="proposalCard">
+      <div class="proposal-question" id="proposalQuestion">Will you be my future wife?</div>
+      <div class="proposal-buttons">
+        <button class="yes-btn" id="yesBtn">Yes 💍</button>
+        <button class="no-btn" id="noBtn">No</button>
+      </div>
+    </div>
+
+    <div class="celebration" id="celebration">
+      <div class="celebration-text">She said YES! 💍💚</div>
+      <div class="celebration-sub">Forever starts now, my love.</div>
+      <a class="msg-btn" id="msgBtn" href="message.html">Read my message to you 💌</a>
+    </div>
+  </div>
+
+<script src="music-sync.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
